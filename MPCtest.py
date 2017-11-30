@@ -33,10 +33,13 @@ indexes = np.where(outline == 1)
 points1 = np.transpose(np.vstack(indexes))
 
 # determine convex hull from points
-points2 = np.random.rand(30, 2) 
 hull = ConvexHull(points1)
 
+# Plot convex hull
 import matplotlib.pyplot as plt
 plt.plot(points1[hull.vertices,0], points1[hull.vertices,1], 'r--', lw=2)
 plt.plot(points1[hull.vertices[0],0], points1[hull.vertices[0],1], 'ro')
 plt.show()
+
+# constraints from hull
+hull.equations
